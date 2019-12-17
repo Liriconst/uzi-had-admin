@@ -1,0 +1,9 @@
+html {
+  font-size: 0.83333333333vw;
+}
+
+$size-base: 16px;
+
+@function ptr($size) {
+  @return #{$size / $size-base}rem;
+}

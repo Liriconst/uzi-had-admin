@@ -1,0 +1,332 @@
+@import "config";
+
+@mixin flexRowRelative {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+@mixin flexColumnRelative {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.appHeader {
+  @include flexColumnRelative;
+}
+
+/*region appHeaderStart*/
+
+.appHeaderStart {
+  @include flexRowRelative;
+  background: #0064aa;
+  width: 100%;
+  height: ptr(80px);
+}
+
+.appHeaderStartPart1 {
+  @include flexRowRelative;
+  width: 50%;
+  padding-left: ptr(48px);
+}
+
+.appHeaderStartAddress {
+  @include flexColumnRelative;
+  margin-right: ptr(48px);
+}
+
+.appHeaderStartDoubleText {
+  @include flexColumnRelative;
+  font-family: "Roboto Slab", serif;
+  font-size: ptr(20px);
+  font-weight: 300;
+  color: white;
+
+  span {
+    padding-top: ptr(11px);
+}
+}
+
+.appHeaderStartAddressSeparator {
+  @include flexRowRelative;
+  width: 1px;
+  height: ptr(56px);
+  background: #015088;
+  margin: ptr(12px) ptr(48px) 0 0;
+}
+
+.appHeaderStartSchedule {
+  @include flexColumnRelative;
+  margin-right: ptr(15px);
+}
+
+.appHeaderStartScheduleSeparator {
+  @include flexRowRelative;
+  width: 1px;
+  height: ptr(44px);
+  background: #4cff00;
+  margin: ptr(18px) ptr(15px) 0 0;
+}
+
+.appHeaderStartNumber {
+  @include flexRowRelative;
+  font-family: "Roboto Slab", serif;
+  font-size: ptr(58px);
+  font-weight: 100;
+  color: #4cff00;
+  margin-top: ptr(-2.5px);
+
+  span {
+    margin: 0 ptr(3px) 0 ptr(3px);
+}
+}
+
+.appHeaderStartTextOO {
+  @include flexRowRelative;
+  font-family: "Roboto Slab", serif;
+  font-size: ptr(26px);
+  font-weight: 300;
+  color: #4cff00;
+  margin: ptr(8.5px) 0 0 ptr(3px);
+}
+
+.appHeaderStartPart2 {
+  @include flexRowRelative;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.appHeaderStartNet {
+  @include flexRowRelative;
+  align-items: center;
+  justify-content: center;
+  width: ptr(52px);
+  margin-right: ptr(28px);
+
+  #img1 {
+    height: ptr(52px);
+    width: ptr(52px);
+    display: block;
+}
+
+  #img2 {
+    display: none;
+}
+
+  &:hover {
+    transition: 200ms ease-out;
+
+    #img1 {
+      display: none;
+  }
+
+    #img2 {
+      height: ptr(60px);
+      width: ptr(60px);
+      display: block;
+  }
+}
+}
+
+.appHeaderStartButton {
+  @include flexRowRelative;
+  align-items: center;
+  justify-content: center;
+  width: ptr(260px);
+  height: ptr(80px);
+  background: #39d02a;
+  font-family: "Roboto Slab", serif;
+  font-size: ptr(30px);
+  font-weight: 400;
+  color: white;
+  line-height: 0;
+  margin: 0 ptr(50px) 0 ptr(22px);
+
+  a {
+    color: white;
+    text-decoration: none;
+}
+
+  &:hover {
+    cursor: pointer;
+    background: #018401;
+    transition: 100ms;
+
+    a {
+      color: white;
+      text-decoration: none;
+  }
+}
+}
+
+.appHeaderStartPhone {
+  @include flexRowRelative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Slab", serif;
+  font-size: ptr(24px);
+  font-weight: 400;
+  color: white;
+  line-height: 0;
+  margin-right: ptr(48px);
+}
+
+/*endregion appHeaderStart*/
+
+/*region appHeaderMiddle*/
+
+.appHeaderMiddle {
+  @include flexRowRelative;
+  background: white;
+  width: 100%;
+  height: ptr(120px);
+}
+
+.appHeaderMiddlePart1 {
+  @include flexRowRelative;
+  width: 30%;
+  padding-left: ptr(48px);
+}
+
+.appHeaderMiddleFavicon {
+  @include flexRowRelative;
+  align-items: center;
+  justify-content: center;
+  width: ptr(80px);
+  margin-right: ptr(20px);
+
+  a {
+    text-decoration: none;
+}
+
+  img {
+    width: 100%;
+}
+}
+
+.appHeaderMiddleName {
+  @include flexColumnRelative;
+  align-items: center;
+
+}
+
+.appHeaderMiddleDoubleText {
+  @include flexRowRelative;
+  font-family: "Roboto Slab", serif;
+  font-size: ptr(48px);
+  font-weight: 400;
+  color: #005890;
+  line-height: 0;
+  padding-top: ptr(30px);
+
+  a {
+    color: #005890;
+    text-decoration: none;
+}
+
+  span {
+    font-size: ptr(24px);
+    font-weight: 300;
+    color: #018401;
+    padding-bottom: ptr(10px);
+
+    a{
+      color: #018401;
+      text-decoration: none;
+  }
+}
+}
+
+.appHeaderMiddlePart2 {
+  @include flexRowRelative;
+  justify-content: flex-end;
+  width: 70%;
+  padding-right: ptr(48px);
+}
+
+.appHeaderMiddleMenu {
+  @include flexRowRelative;
+  height: ptr(40px);
+  margin-top: ptr(50px);
+}
+
+.appHeaderMiddleMenuText {
+  @include flexRowRelative;
+  height: ptr(40px);
+  font-family: "Roboto", sans-serif;
+  font-size: ptr(30px);
+  font-weight: 300;
+  color: #0064aa;
+  line-height: 0;
+  border-bottom: 1px solid #beced9;
+  box-sizing: border-box;
+
+  a {
+    color: #0064aa;
+    text-decoration: none;
+}
+
+  &:hover {
+    color: black;
+    border-bottom: 3px solid #005890;
+    box-sizing: border-box;
+    transition: 100ms;
+
+    a {
+      color: black;
+      text-decoration: none;
+  }
+}
+}
+
+.appHeaderMiddleMenuCurrent {
+  @include flexRowRelative;
+  height: ptr(40px);
+  font-family: "Roboto", sans-serif;
+  font-size: ptr(30px);
+  font-weight: 300;
+  color: black;
+  line-height: 0;
+  border-bottom: 3px solid #005890;
+  box-sizing: border-box;
+
+  a {
+    color: black;
+    text-decoration: none;
+}
+}
+
+.appHeaderMiddleMenuSpace {
+  @include flexRowRelative;
+  height: ptr(40px);
+  width: ptr(20px);
+  border-bottom: 1px solid #beced9;
+  box-sizing: border-box;
+}
+
+/*endregion appHeaderMiddle*/
+
+/*region appHeaderEnd*/
+
+.appHeaderEnd {
+  @include flexRowRelative;
+  justify-content: center;
+  min-height: ptr(90px);
+  max-height: ptr(100px);
+  width: 100%;
+  background: #0064aa;
+}
+
+.appHeaderEndText {
+  @include flexRowRelative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: ptr(36px);
+  font-weight: 400;
+  color: white;
+  line-height: 0;
+}
+
+/*endregion appHeaderEnd*/
