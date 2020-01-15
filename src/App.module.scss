@@ -1,108 +1,84 @@
 @import "config";
 
-@mixin flexRowRelative {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-
-@mixin flexColumnRelative {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+@mixin Footer {
+  width: 50%;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #005890;
 }
 
 .appHeader {
-  @include flexRowRelative;
-  width: 100vw;
+  display: grid;
+  grid-template-columns: 353px 1fr;
+  grid-template-rows: 100vh;
 }
 
 .appBar {
-  @include flexColumnRelative;
-  height: 100vh;
-  min-width: ptr(352px);
+  display: grid;
+  grid-template-columns: 353px;
+  grid-template-rows: 129px 1fr 36px;
   border-right: 1px solid #d7d7d7;
-}
-
-.appBarBlock1 {
-  @include flexColumnRelative;
-  height: 50vh;
-  min-width: ptr(352px);
-  border-right: 1px solid #d7d7d7;
-}
-
-.appBarBlock2 {
-  @include flexColumnRelative;
-  height: 50vh;
-  min-width: ptr(352px);
-  border-right: 1px solid #d7d7d7;
+  box-sizing: border-box;
 }
 
 .appBarHeader {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid #d7d7d7;
+  box-sizing: border-box;
+
   a {
-    @include flexColumnRelative;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 129px;
     justify-content: center;
-    height: ptr(160px);
-    width: 100%;
-    font-family: "Roboto", sans-serif;
-    font-size: ptr(36px);
-    font-weight: 300;
-    color: #1890ff;
-    line-height: ptr(48px);
+    align-items: center;
+
+    span {
+      font-family: "Roboto", sans-serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: #1890ff;
+      line-height: 48px;
+    }
 
     &:hover {
-      @include flexColumnRelative;
-      align-items: center;
-      justify-content: center;
-      height: ptr(160px);
-      width: 100%;
-      font-family: "Roboto", sans-serif;
-      font-size: ptr(36px);
-      font-weight: 300;
-      color: white;
       background: #1890ff;
-      line-height: ptr(48px);
       transition: 250ms ease-out;
+
+      span {
+        color: white;
+        transition: 250ms ease-out;
+      }
     }
   }
-}
-
-.appBarSeparator {
-  @include flexRowRelative;
-  align-items: center;
-  justify-content: center;
-  height: 1px;
-  width: ptr(336px);
-  background: #d7d7d7;
-  margin-left: ptr(8px);
 }
 
 .appBarMenuButton {
   @include flexRowRelative;
   align-items: center;
-  height: ptr(80px);
-  width: 100%;
-  font-family: "Roboto", sans-serif;
-  font-size: ptr(30px);
-  font-weight: 300;
-  color: #314659;
-  padding-left: ptr(24px);
+  height: 96px;
+  width: 352px;
+  padding-left: 24px;
 
   a {
     @include flexRowRelative;
     align-items: center;
-    height: ptr(80px);
-    width: 100%;
+    height: 96px;
+    width: 352px;
     font-family: "Roboto", sans-serif;
-    font-size: ptr(30px);
+    font-size: 30px;
     font-weight: 300;
     color: #314659;
+    transition: 250ms;
   }
 
   &:hover {
     a {
       color: #1890ff;
+      transition: 250ms;
     }
   }
 }
@@ -110,21 +86,18 @@
 .appBarMenuButtonActive {
   @include flexRowRelative;
   align-items: center;
-  height: ptr(80px);
-  width: 100%;
+  height: 96px;
+  width: 353px;
+  padding-left: 24px;
   background: #e6efff;
   box-shadow: -1px 0 0 0 #1890ff inset;
   border-right: 1px solid #1890ff;
 
   a {
-    @include flexRowRelative;
-    align-items: center;
-    height: ptr(80px);
     font-family: "Roboto", sans-serif;
-    font-size: ptr(30px);
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 300;
     color: #1890ff;
-    padding-left: ptr(24px);
   }
 
   &:hover {
@@ -132,32 +105,27 @@
   }
 }
 
-.appBarMenuFooter {
+.appBarFooter {
   @include flexRowRelative;
-  align-items: flex-end;
-  height: 100%;
-  width: 100%;
-  padding-bottom: ptr(24px);
 }
 
-.appBarMenuFooterBlock1 {
+.appBarFooterBuild {
   @include flexRowRelative;
+  @include Footer;
   justify-content: flex-start;
-  width: 50%;
-  font-family: "Roboto", sans-serif;
-  font-size: ptr(16px);
-  font-weight: 300;
-  color: #005890;
-  padding-left: ptr(24px);
+  padding-left: 24px;
 }
 
-.appBarMenuFooterBlock2 {
+.appBarFooterLink {
   @include flexRowRelative;
   justify-content: flex-end;
-  width: 50%;
-  font-family: "Roboto", sans-serif;
-  font-size: ptr(16px);
-  font-weight: 300;
-  color: #005890;
-  padding-right: ptr(24px);
+  padding-right: 24px;
+
+  a {
+    @include Footer;
+
+    &:hover {
+      color: black;
+    }
+  }
 }

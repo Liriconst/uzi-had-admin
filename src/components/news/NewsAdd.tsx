@@ -59,7 +59,7 @@ class NewsAdd extends React.Component<NewsAddProps, {
             description:
                 'Ваша новость была успешно добавлена и вскором времени появится на сайте.',
             icon: <Icon type="check-circle" style={{ color: '#52c41a' }} />,
-            duration: 0,
+            duration: 6,
         });
     };
 

@@ -25,6 +25,15 @@
 
 .newsAllTemplate {
   @include flexRowRelative;
+  align-items: center;
+  height: 96px;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 30px !important;
+  color: #314659;
+  padding-left: 30px;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .newsButtons {
