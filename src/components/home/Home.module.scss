@@ -1,0 +1,57 @@
+@import "../../config";
+
+@mixin flexRowRelative {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+@mixin flexColumnRelative {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pageHome {
+  @include flexColumnRelative;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+
+.homeTitle {
+  @include flexColumnRelative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: ptr(60px);
+  font-weight: 700;
+  color: #393939;
+  margin-top: ptr(256px);
+}
+
+.homeSeparator {
+  @include flexColumnRelative;
+  height: ptr(60px);
+}
+
+.homeText {
+  @include flexRowRelative;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: ptr(30px);
+  font-weight: 400;
+  color: #707070;
+  margin-bottom: ptr(30px);
+
+  a {
+    color: #3eb5f1;
+
+    &:hover {
+      color: black;
+    }
+  }
+}

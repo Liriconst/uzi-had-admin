@@ -1,0 +1,143 @@
+@import "../../config";
+
+.reviewsSelect {
+  margin-right: ptr(50px);
+
+  & .ant-select {
+    width: ptr(325px) !important;
+    height: 100% !important;
+    & * { //отменяем у всех вложенных
+      box-shadow: none !important;
+    }
+
+    & .ant-select-selection {
+      display: flex;
+      align-items: center;
+      font-family: "Roboto", sans-serif !important;
+      font-weight: 300 !important;
+      font-size: ptr(25px) !important;
+      color: #0064aa;
+      border: 1px solid #0064aa !important;
+      border-radius: 0;
+      height: ptr(50px) !important;
+    }
+
+    &.ant-select-focused {
+      box-shadow: 0 0 0 2px rgba(0, 100, 170, 0.2) !important;
+    }
+  }
+}
+
+.reviewsDropdown {
+  border-radius: 0 !important;
+
+  & * {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300 !important;
+    font-size: ptr(25px) !important;
+    color: #0064aa !important;
+
+    & .ant-select-dropdown-menu-item {
+      padding: ptr(15px);
+    }
+
+    & .ant-select-dropdown-menu-item:hover {
+      background: rgba(0, 100, 170, 0.15) !important;
+    }
+
+    & .ant-select-dropdown-menu-item-selected {
+      font-weight: 400 !important;
+    }
+  }
+}
+
+.reviewsModal {
+
+  & .ant-btn {
+    &.ant-btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Roboto", sans-serif !important;
+      font-weight: 300 !important;
+      font-size: ptr(25px) !important;
+      color: white;
+      width: ptr(325px) !important;
+      height: ptr(50px) !important;
+      background: #3592d4;
+      border-radius: 0;
+    }
+  }
+}
+
+.reviewsWrap {
+  & .ant-modal-body {
+    padding: ptr(24px) 24px;
+  }
+
+  & .ant-modal-footer {
+    padding-right: 24px !important;
+    & .ant-btn {
+      &.ant-btn-primary {
+        font-family: "Roboto", sans-serif !important;
+        font-weight: 300 !important;
+        font-size: ptr(25px) !important;
+        color: white;
+      }
+    }
+  }
+
+  & .ant-modal-title {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: ptr(30px) !important;
+    color: #0064aa;
+  }
+
+  & .ant-input {
+    font-family: "Roboto", sans-serif;
+    font-size: ptr(20px);
+    font-weight: 300;
+    font-style: normal;
+    color: #393939;
+    border: 1px solid #0064aa;
+
+    &.ant-input::placeholder {
+      font-size: ptr(18px);
+      font-style: italic;
+      color: #758088;
+    }
+  }
+}
+
+.reviewsWarning {
+  & .ant-modal-body {
+    padding: 24px 24px !important;
+
+    & .ant-modal-confirm-title {
+      font-family: "Roboto", sans-serif;
+      font-size: ptr(30px) !important;
+      font-weight: 400 !important;
+      color: #0064aa !important;
+    }
+
+    & .ant-modal-confirm-content {
+      font-family: "Roboto", sans-serif;
+      font-size: ptr(25px) !important;
+      font-weight: 300 !important;
+      color: #393939;
+    }
+
+    & .ant-modal-confirm-btns {
+      margin-top: ptr(16px) !important;
+      & .ant-btn {
+        &.ant-btn-primary {
+          font-family: "Roboto", sans-serif !important;
+          font-weight: 300 !important;
+          font-size: ptr(25px) !important;
+          color: white;
+        }
+      }
+    }
+  }
+}

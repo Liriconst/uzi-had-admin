@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2433174-312f-4dc9-86eb-537ef68113bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fonts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/home/Home.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/home/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/news/News.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/news/News.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/news/News.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/news/NewsAdd.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/spa/Spa.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ultrasound/Ultrasound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Sass File" />
+        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
       </list>
     </option>
@@ -34,7 +46,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../smarthome-fa-v2" />
+    <property name="last_opened_file_path" value="D:/smarthome-fa-v2" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -62,7 +74,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576619297863</updated>
-      <workItem from="1576619298922" duration="1978000" />
+      <workItem from="1576619298922" duration="2194000" />
+      <workItem from="1576626935800" duration="4233000" />
+      <workItem from="1576657751880" duration="13263000" />
+      <workItem from="1576769115903" duration="7041000" />
+      <workItem from="1576802143960" duration="673000" />
+      <workItem from="1576830058697" duration="5990000" />
     </task>
     <task id="LOCAL-00001" summary="Dependency installation">
       <created>1576620277079</created>
@@ -71,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576620277079</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Prestart operation">
+      <created>1576621449525</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576621449525</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,7 +106,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -90,6 +116,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dependency installation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dependency installation" />
+    <MESSAGE value="Prestart operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prestart operation" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="261" y="245" key="git4idea.merge.GitPullDialog" timestamp="1579076030045">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="261" y="245" key="git4idea.merge.GitPullDialog/0.0.1600.900@0.0.1600.900" timestamp="1579076030045" />
   </component>
 </project>
