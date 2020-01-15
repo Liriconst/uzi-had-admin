@@ -3,18 +3,12 @@ import {Link} from "react-router-dom";
 import styles from "./Home.module.scss";
 
 class Home extends React.Component<{}, {
-    mode?: string,
-    visible?: boolean,
-    visible2?: boolean,
-    loading?:boolean
+    mode?: string
 }> {
     public constructor(props: {}) {
         super(props);
         this.state = {
-            mode: 'all',
-            visible: false,
-            visible2: false,
-            loading: false
+            mode: 'all'
         };
     }
 
@@ -22,7 +16,6 @@ class Home extends React.Component<{}, {
         return (
             <div className={styles.pageHome}>
                 <span className={styles.homeTitle}>ЗДРАВСТВУЙТЕ, ИГОРЬ</span>
-                <span className={styles.homeSeparator}/>
                 <span className={styles.homeText}>Просмотреть, отредактировать и одобрить&nbsp;<Link to="/reviews">/отзывы</Link></span>
                 <span className={styles.homeText}>Добавить, просмотреть или изменить запись на&nbsp;<Link to="/ultrasound">/узи</Link></span>
                 <span className={styles.homeText}>Просмотреть запросы обратных звонков записи на&nbsp;<Link to="/spa">/массаж</Link></span>

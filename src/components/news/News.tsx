@@ -3,8 +3,9 @@ import {Link} from "react-router-dom";
 import autobind from "autobind-decorator";
 import styles from "./News.module.scss";
 import {Select, Modal, Button, Input} from 'antd';
-import NewsAdd from "./NewsAdd";
 import "./News.scss";
+import WrappedNewsAdd from "./NewsAdd";
+import NewsAll from "./NewsAll";
 
 const {Option} = Select;
 const {TextArea} = Input;
@@ -15,7 +16,7 @@ function countDown() {
     const modal = Modal.success({
         title: 'Новость успешно добавлена!',
         okText: 'Понятно',
-        className: 'reviewsWarning',
+        className: 'newsWarning',
         content: (<div>
             Новость была успешно добавлена.
             Это окно закроется через {secondsToGo} сек.
@@ -50,7 +51,8 @@ class News extends React.Component<{}, {
             mode: 'all',
             visible: false,
             visible2: false,
-            loading: false
+            loading: false,
+
         };
     }
 
@@ -92,18 +94,19 @@ class News extends React.Component<{}, {
                             title="Ваш отзыв"
                             visible={this.state.visible}
                             onCancel={this.handleCancel}
-                            footer={[
-                                <Button key="submit" type="primary" loading={this.state.loading} onClick={this.handleOk}>
-                                    Добавить новость
-                                </Button>,
-                            ]}
-                            wrapClassName="reviewsWrap"
+                            // footer={[
+                            //     <Button key="submit" type="primary" loading={this.state.loading} onClick={this.handleOk}>
+                            //         Добавить новость
+                            //     </Button>,
+                            // ]}
+                            wrapClassName="newsWrap"
                         >
-                            <NewsAdd/>
+                            <WrappedNewsAdd onCancel={this.handleCancel}/>
                         </Modal>
                     </div>
                 </div>
-                <div className={styles.newsShowBlock}/>
+                {/*<div className={styles.newsShowBlock}/>*/}
+                <NewsAll/>
             </div>
         );
     }
