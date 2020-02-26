@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="15f09b30-43a7-4c7a-a872-a3ca088f9e2f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/News.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/NewsAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAdd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +26,7 @@
     <property name="last_opened_file_path" value="D:/smarthome-fa-v2" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\Games\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="D:\uzi-had-admin\node_modules\typescript\lib" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -60,6 +54,13 @@
       <workItem from="1579078673624" duration="14000" />
       <workItem from="1579079021105" duration="17689000" />
       <workItem from="1579113232318" duration="109000" />
+      <workItem from="1579121496404" duration="57000" />
+      <workItem from="1580051972075" duration="50000" />
+      <workItem from="1580978014466" duration="666000" />
+      <workItem from="1580984402131" duration="863000" />
+      <workItem from="1582667281661" duration="4180000" />
+      <workItem from="1582703373748" duration="1329000" />
+      <workItem from="1582743420919" duration="2261000" />
     </task>
     <task id="LOCAL-00001" summary="Work with news in admin-panel">
       <created>1579079087681</created>
@@ -68,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579079087682</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Work with news in admin-panel 2">
+      <created>1579121521441</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1579121521441</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -76,16 +84,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Work with news in admin-panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with news in admin-panel" />
+    <MESSAGE value="Work with news in admin-panel 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with news in admin-panel 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1579079086585">
+    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1579121520040">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900@0.0.1600.900" timestamp="1579079086585" />
-    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1579079144137">
+    <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900@0.0.1600.900" timestamp="1579121520040" />
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1579121530844">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1579079144137" />
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1579121530844" />
   </component>
 </project>

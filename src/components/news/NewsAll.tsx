@@ -26,15 +26,13 @@ const GET_NEWS = gql`
 
 class NewsAll extends React.Component<{}, {
     mode?: string,
-    visible?: boolean,
-    visible2?: boolean
+    visible?: boolean
 }> {
     public constructor(props: {}) {
         super(props);
         this.state = {
             mode: 'all',
-            visible: false,
-            visible2: false
+            visible: false
         };
     }
 
@@ -49,31 +47,6 @@ class NewsAll extends React.Component<{}, {
     };
 
     public render(): React.ReactNode {
-        // const numbers = [
-        //     {id: 35, name: 'jumper', color: 'red', price: 20},
-        //     {id: 42, name: 'shirt', color: 'blue', price: 15},
-        //     {id: 56, name: 'pants', color: 'green', price: 25},
-        //     {id: 71, name: 'socks', color: 'black', price: 5},
-        //     {id: 72, name: 'socks', color: 'white', price: 5},
-        // ];
-        //
-        // const listItems = numbers.map((number) =>
-        //     <div className={styles.newsAllTemplate}>
-        //         <span>{number.id}</span>
-        //         <span>{number.name}</span>
-        //         <span>{number.color}</span>
-        //         <span>{number.price}</span>
-        //     </div>
-        // );
-        //
-        // return (
-        //     <div className={styles.newsAll}>
-        //         {listItems}
-        //     </div>
-        // );
-
-        // const NewsQuery1 = () => (
-
         return (
             <Query query={GET_NEWS}>
                 {({loading, error, data}: {loading: boolean, error?: ApolloError, data: any}) => {
@@ -82,9 +55,7 @@ class NewsAll extends React.Component<{}, {
                     console.log(data);
                     return (
                         <div className={styles.newsAll}>
-                        {/*<select name="newsQuery" onChange={onNewSelected}>*/}
                             {data.allNews.nodes.map((newsQuery: any) => (
-                                // onClick={this.showModal}
                                 <Button type="primary" key={newsQuery.id} className={"newsList"}>
                                     <span>Новость&nbsp;</span>
                                     <span>"{newsQuery.title}"&nbsp;</span>
