@@ -5,7 +5,7 @@ import styles from "./News.module.scss";
 import {Select, Modal, Button, Input} from 'antd';
 import "./News.scss";
 import WrappedNewsAdd from "./NewsAdd";
-import NewsAll from "./NewsAll";
+import NewsAllTest from "./NewsAllTest";
 
 const {Option} = Select;
 const {TextArea} = Input;
@@ -106,7 +106,7 @@ class News extends React.Component<{}, {
                     </div>
                 </div>
                 {/*<div className={styles.newsShowBlock}/>*/}
-                <NewsAll/>
+                <NewsAllTest/>
             </div>
         );
     }

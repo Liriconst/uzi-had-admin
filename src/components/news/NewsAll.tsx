@@ -10,13 +10,12 @@ import { ApolloError } from "apollo-boost";
 import moment from "moment";
 import WrappedNewsAdd from "./NewsAdd";
 
-const GET_NEWS = gql`
-    query AddNews {
+const GET_REVIEWS = gql`
+    query {
         allNews(orderBy: NEWS_DATE_DESC) {
             nodes {
                 id
                 title
-                annotation
                 fullText
                 newsDate
             }
@@ -47,8 +46,12 @@ class NewsAll extends React.Component<{}, {
     };
 
     public render(): React.ReactNode {
+        function sliceTitleNews(str: string) {
+            return (str.slice(0, 65) + '...');
+        }
+
         return (
-            <Query query={GET_NEWS}>
+            <Query query={GET_REVIEWS}>
                 {({loading, error, data}: {loading: boolean, error?: ApolloError, data: any}) => {
                     if (loading) return <span>"Loading...";</span>
                     if (error) return <span>`Error! ${error.message}`</span>;
@@ -57,9 +60,9 @@ class NewsAll extends React.Component<{}, {
                         <div className={styles.newsAll}>
                             {data.allNews.nodes.map((newsQuery: any) => (
                                 <Button type="primary" key={newsQuery.id} className={"newsList"}>
-                                    <span>Новость&nbsp;</span>
-                                    <span>"{newsQuery.title}"&nbsp;</span>
-                                    <span>от&nbsp;</span>
+                                    <span style={{fontWeight: "normal"}}>Новость&nbsp;</span>
+                                    <span>"{sliceTitleNews(newsQuery.title)}"&nbsp;</span>
+                                    <span style={{fontWeight: "normal"}}>от&nbsp;</span>
                                     <span>{moment(newsQuery.newsDate).format("DD.MM.YYYY hh:mm:ss")}</span>
                                 </Button>
                             ))}

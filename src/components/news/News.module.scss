@@ -21,6 +21,9 @@
 
 .newsAll {
   @include flexColumnRelative;
+  padding-left: 30px;
+  width: 100% !important;
+  overflow-y: auto;
 }
 
 .newsAllTemplate {
@@ -31,7 +34,6 @@
   font-weight: 300 !important;
   font-size: 30px !important;
   color: #314659;
-  padding-left: 30px;
   border: none !important;
   box-shadow: none !important;
 }

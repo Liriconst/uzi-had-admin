@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f09b30-43a7-4c7a-a872-a3ca088f9e2f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/svg/closed-trash-bin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/svg/trash-can.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/news/NewsAllTest.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/news/NewsModal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/update-delete.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/News.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -10,23 +19,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WQOx0ClkmeVLWN4FkyqD56LeAP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/smarthome-fa-v2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/news" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\uzi-had-admin\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\uzi-had-admin\public\static\svg" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\uzi-had-admin\src\components\news" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -60,7 +89,19 @@
       <workItem from="1580984402131" duration="863000" />
       <workItem from="1582667281661" duration="4180000" />
       <workItem from="1582703373748" duration="1329000" />
-      <workItem from="1582743420919" duration="2261000" />
+      <workItem from="1582743420919" duration="2295000" />
+      <workItem from="1582837540839" duration="682000" />
+      <workItem from="1582999070809" duration="1904000" />
+      <workItem from="1583224865079" duration="4053000" />
+      <workItem from="1583269020720" duration="631000" />
+      <workItem from="1583350686839" duration="2874000" />
+      <workItem from="1583437693209" duration="582000" />
+      <workItem from="1583443258992" duration="2346000" />
+      <workItem from="1583612940744" duration="1531000" />
+      <workItem from="1583687639898" duration="1965000" />
+      <workItem from="1583747653037" duration="632000" />
+      <workItem from="1583778478823" duration="598000" />
+      <workItem from="1584260821532" duration="17152000" />
     </task>
     <task id="LOCAL-00001" summary="Work with news in admin-panel">
       <created>1579079087681</created>
@@ -76,25 +117,40 @@
       <option name="project" value="LOCAL" />
       <updated>1579121521441</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Work with news in admin-panel 3">
+      <created>1582753497392</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582753497392</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Work with news in admin-panel" />
     <MESSAGE value="Work with news in admin-panel 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with news in admin-panel 2" />
+    <MESSAGE value="Work with news in admin-panel 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work with news in admin-panel 3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1579121520040">
+    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1582753496805">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
+    <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1582753496805" />
     <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900@0.0.1600.900" timestamp="1579121520040" />
-    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1579121530844">
+    <state x="323" y="95" key="SettingsEditor" timestamp="1584308652330">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
+    <state x="323" y="95" key="SettingsEditor/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584308652330" />
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1582753501669">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1582753501669" />
     <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1579121530844" />
   </component>
 </project>

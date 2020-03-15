@@ -1,0 +1,26 @@
+mutation UpdateNews{
+  updateNewsById(
+    input: {
+      id: "1"
+      newsPatch: {
+        title: "UPDATE",
+        fullText: "UPDATE"
+      }
+    }
+  ) {
+    news {
+      id
+      title
+    }
+  }
+}
+
+mutation DeleteNews {
+  deleteNewsById (
+    input: {
+      id: "1"
+    }
+  ){
+    deletedNewsId
+  }
+}
