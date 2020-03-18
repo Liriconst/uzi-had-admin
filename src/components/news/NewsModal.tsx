@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Button, Form, Icon, Input, Modal, notification} from "antd";
+import {Button, Form, Icon, Input, Modal, notification, Upload} from "antd";
 import "./News.scss";
 import styles from "./News.module.scss";
 import gql from "graphql-tag";
@@ -30,6 +30,15 @@ const UPDATE_NEWS = gql`
   }
 `;
 
+function getBase64(file: any) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
+
 interface NewsAddProps {
     onClose(): void
     form?: any
@@ -41,7 +50,10 @@ class NewsModal extends React.Component<NewsAddProps, {
     mode?: string,
     visible?: boolean,
     visible2?: boolean,
-    loading?:boolean
+    loading?:boolean,
+    previewVisible?: boolean,
+    previewImage?: string,
+    fileList?: any[]
 }> {
     public constructor(props: NewsAddProps) {
         super(props);
@@ -49,7 +61,10 @@ class NewsModal extends React.Component<NewsAddProps, {
             mode: 'all',
             visible: false,
             visible2: false,
-            loading: false
+            loading: false,
+            previewVisible: false,
+            previewImage: '',
+            fileList: []
         };
     }
 
@@ -82,9 +97,34 @@ class NewsModal extends React.Component<NewsAddProps, {
         });
     };
 
+    handleCancel = () => this.setState({ previewVisible: false });
+
+    handlePreview = async (file: any) => {
+        if (!file.url && !file.preview) {
+            file.preview = await getBase64(file.originFileObj);
+        }
+
+        this.setState({
+            previewImage: file.url || file.preview,
+            previewVisible: true,
+        });
+    };
+
+    handleChange = ({fileList}: { fileList: any}) => this.setState({ fileList });
+
     render() {
         const { getFieldDecorator } = this.props.form;
-        const { news, isVisible, onClose } = this.props;
+        const { isVisible, onClose } = this.props;
+        const { previewVisible, previewImage, fileList } = this.state;
+        const uploadButton = (
+            <div>
+                <Icon type="plus" />
+                <div className="newsUploadImgButton">
+                    <span>Выберите</span>
+                    <span>картинку</span>
+                </div>
+            </div>
+        );
 
         return (
             <Mutation mutation={UPDATE_NEWS}>
@@ -92,25 +132,41 @@ class NewsModal extends React.Component<NewsAddProps, {
                     <Modal
                         visible={ isVisible }
                         onCancel={ onClose }
-                        // footer={[
-                        //     <Button className={"newsButtonInModal"} key="submit" type="primary" onClick={onClose}>Закрыть</Button>
-                        // ]}
-                        className={"newsModal"}>
+                        className={"newsModal2"}
+                        wrapClassName="newsWrap">
                         <Form onSubmit={this.handleSubmit} className="login-form">
-                            <div className={styles.addNewsHeaderTitle}>Введите название новости:</div>
-                            <Form.Item>
-                                {getFieldDecorator('title', {
-                                    rules: [{ required: true, message: 'Пожалуйста, заполните поле!' }],
-                                })(
-                                    <Input placeholder="Название новости..."/>
-                                )}
-                            </Form.Item>
+                            <div className={styles.newsModalImgTitleBlock}>
+                                <div className="clearfix">
+                                    <Upload
+                                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                        listType="picture-card"
+                                        fileList={fileList}
+                                        onPreview={this.handlePreview}
+                                        onChange={this.handleChange}
+                                    >
+                                        {fileList && fileList.length >= 1 ? null : uploadButton}
+                                    </Upload>
+                                    <Modal visible={previewVisible} footer={null} onCancel={this.handleCancel}>
+                                        <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                                    </Modal>
+                                </div>
+                                <div style={{paddingLeft: "30px"}}>
+                                    <div className={styles.addNewsHeaderTitle}>Введите название новости:</div>
+                                    <Form.Item>
+                                        {getFieldDecorator('title', {
+                                            rules: [{ required: true, message: 'Пожалуйста, заполните поле!' }],
+                                        })(
+                                            <TextArea placeholder="Название новости..." autoSize={{minRows: 2}}/>
+                                        )}
+                                    </Form.Item>
+                                </div>
+                            </div>
                             <div className={styles.addNewsHeaderText}>Краткое содержание новости:</div>
                             <Form.Item>
                                 {getFieldDecorator('newsImg', {
                                     rules: [{ required: true, message: 'Пожалуйста, заполните поле!' }],
                                 })(
-                                    <TextArea placeholder="Краткое содержание, заполняется автоматически..." autoSize={{minRows: 3}} name="addAnnotation"/>
+                                    <Input placeholder="Краткое содержание, заполняется автоматически..."/>
                                 )}
                             </Form.Item>
                             <div className={styles.addNewsHeaderText}>Введите текст новости:</div>

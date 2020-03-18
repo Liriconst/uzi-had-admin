@@ -1,57 +1,6 @@
 @import "../../config";
 
-.reviewsSelect {
-  margin-right: 50px !important;
-
-  & .ant-select {
-    width: 325px !important;
-    height: 100% !important;
-    & * { //отменяем у всех вложенных
-      box-shadow: none !important;
-    }
-
-    & .ant-select-selection {
-      display: flex;
-      align-items: center;
-      font-family: "Roboto", sans-serif !important;
-      font-weight: 300 !important;
-      font-size: 25px !important;
-      color: #0064aa !important;
-      border: 1px solid #0064aa !important;
-      border-radius: 0 !important;
-      height: 50px !important;
-    }
-
-    &.ant-select-focused {
-      box-shadow: 0 0 0 2px rgba(0, 100, 170, 0.2) !important;
-    }
-  }
-}
-
-.reviewsDropdown {
-  border-radius: 0 !important;
-
-  & * {
-    font-family: "Roboto", sans-serif !important;
-    font-weight: 300 !important;
-    font-size: 25px !important;
-    color: #0064aa !important;
-
-    & .ant-select-dropdown-menu-item {
-      padding: 15px !important;
-    }
-
-    & .ant-select-dropdown-menu-item:hover {
-      background: rgba(0, 100, 170, 0.15) !important;
-    }
-
-    & .ant-select-dropdown-menu-item-selected {
-      font-weight: 400 !important;
-    }
-  }
-}
-
-.newsModal {
+@mixin newsModalTemplate {
   & .ant-modal-title {
     font-family: "Roboto", sans-serif !important;
     font-weight: 400 !important;
@@ -74,25 +23,20 @@
   }
 }
 
-.newsAddAnnotation {
-  & .ant-input {
-    font-family: "Roboto", sans-serif !important;
-    font-size: 20px !important;
-    font-weight: 300 !important;
-    font-style: italic !important;
-    color: #758088 !important;
-    border: 1px solid #758088 !important;
-    background: #abb7bf !important;
+.newsModalAdd {
+  @include newsModalTemplate;
+}
 
-    &.ant-input::placeholder {
-      font-size: 18px !important;
-      font-style: italic !important;
-      color: #758088 !important;
-    }
-  }
+.newsModalUpdate {
+  @include newsModalTemplate;
+  width: 1024px;
 }
 
 .newsWrap {
+  .ant-modal {
+    width: 1024px !important;
+  }
+
   & .ant-modal-body {
     padding: 24px 24px 16px 24px !important;
   }
@@ -100,21 +44,6 @@
   & .ant-modal-footer {
     display: none !important;
   }
-
-  //& .ant-modal-footer {
-  //  height: 61px !important;
-  //  padding-right: 24px !important;
-  //
-  //  & .ant-btn {
-  //    &.ant-btn-primary {
-  //      height: 40px !important;
-  //      font-family: "Roboto", sans-serif !important;
-  //      font-weight: 300 !important;
-  //      font-size: 25px !important;
-  //      color: white !important;
-  //    }
-  //  }
-  //}
 
   .newsStyle {
     display: flex;
@@ -208,6 +137,14 @@
     //  box-shadow: 0 0 3px red !important;
     //}
   }
+}
+
+.newsUploadImgButton {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .newsDeleteButton {

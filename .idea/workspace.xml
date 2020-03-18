@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15f09b30-43a7-4c7a-a872-a3ca088f9e2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/static/svg/closed-trash-bin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/static/svg/trash-can.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/news/NewsAllTest.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/news/NewsModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/update-delete.txt" afterDir="false" />
+    <list default="true" id="15f09b30-43a7-4c7a-a872-a3ca088f9e2f" name="Default Changelist" comment="add function update and delete news">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/KK.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/news/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/news/News.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/news/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/NewsAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAdd.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/NewsAllTest.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/NewsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +48,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/news" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/reviews" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Rainbow Brackets" />
     <property name="ts.external.directory.path" value="D:\uzi-had-admin\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -54,6 +59,7 @@
       <recent name="D:\uzi-had-admin\public\static\svg" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\uzi-had-admin\src\components\reviews" />
       <recent name="D:\uzi-had-admin\src\components\news" />
     </key>
   </component>
@@ -102,6 +108,13 @@
       <workItem from="1583747653037" duration="632000" />
       <workItem from="1583778478823" duration="598000" />
       <workItem from="1584260821532" duration="17152000" />
+      <workItem from="1584311054699" duration="50000" />
+      <workItem from="1584347228100" duration="4170000" />
+      <workItem from="1584368519747" duration="8742000" />
+      <workItem from="1584443735565" duration="7697000" />
+      <workItem from="1584542336643" duration="9498000" />
+      <workItem from="1584556486595" duration="36000" />
+      <workItem from="1584556706935" duration="3800000" />
     </task>
     <task id="LOCAL-00001" summary="Work with news in admin-panel">
       <created>1579079087681</created>
@@ -124,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582753497392</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add function update and delete news">
+      <created>1584311083052</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584311083052</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,22 +155,31 @@
     <MESSAGE value="Work with news in admin-panel" />
     <MESSAGE value="Work with news in admin-panel 2" />
     <MESSAGE value="Work with news in admin-panel 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work with news in admin-panel 3" />
+    <MESSAGE value="add function update and delete news" />
+    <option name="LAST_COMMIT_MESSAGE" value="add function update and delete news" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1582753496805">
+    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1584311088599">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1582753496805" />
+    <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584311088599" />
     <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900@0.0.1600.900" timestamp="1579121520040" />
-    <state x="323" y="95" key="SettingsEditor" timestamp="1584308652330">
+    <state x="375" y="83" key="SettingsEditor" timestamp="1584348327634">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="323" y="95" key="SettingsEditor/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584308652330" />
-    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1582753501669">
+    <state x="375" y="83" key="SettingsEditor/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584348327634" />
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1584311093660">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1582753501669" />
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584311093660" />
     <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1579121530844" />
+    <state x="456" y="205" key="run.anything.popup" timestamp="1584462144764">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="456" y="205" key="run.anything.popup/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584462144764" />
+    <state x="456" y="103" width="672" height="676" key="search.everywhere.popup" timestamp="1584550777891">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="456" y="103" width="672" height="676" key="search.everywhere.popup/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584550777891" />
   </component>
 </project>

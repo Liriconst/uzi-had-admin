@@ -5,7 +5,7 @@ import styles from "./News.module.scss";
 import {Select, Modal, Button, Input} from 'antd';
 import "./News.scss";
 import WrappedNewsAdd from "./NewsAdd";
-import NewsAllTest from "./NewsAllTest";
+import NewsAll from "./NewsAll";
 
 const {Option} = Select;
 const {TextArea} = Input;
@@ -86,27 +86,19 @@ class News extends React.Component<{}, {
         return (
             <div className={styles.pageNews}>
                 <div className={styles.newsButtons}>
-                    <div className="newsModal">
-                        <Button type="primary" onClick={this.showModal}>
-                            Добавить новость
-                        </Button>
-                        <Modal
-                            title="Ваш отзыв"
-                            visible={this.state.visible}
-                            onCancel={this.handleCancel}
-                            // footer={[
-                            //     <Button key="submit" type="primary" loading={this.state.loading} onClick={this.handleOk}>
-                            //         Добавить новость
-                            //     </Button>,
-                            // ]}
-                            wrapClassName="newsWrap"
-                        >
-                            <WrappedNewsAdd onCancel={this.handleCancel}/>
-                        </Modal>
-                    </div>
+                    <Button type="primary" onClick={this.showModal} className={styles.newsButtonAdd}>
+                        Добавить новость
+                    </Button>
+                    <Modal
+                        title="Ваш отзыв"
+                        visible={this.state.visible}
+                        onCancel={this.handleCancel}
+                        wrapClassName="newsWrap"
+                    >
+                        <WrappedNewsAdd onCancel={this.handleCancel}/>
+                    </Modal>
                 </div>
-                {/*<div className={styles.newsShowBlock}/>*/}
-                <NewsAllTest/>
+                <NewsAll/>
             </div>
         );
     }

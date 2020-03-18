@@ -1,25 +1,50 @@
 @import "../../config";
 
+.reviewsModal {
+  & .ant-modal-title {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 30px !important;
+    color: #0064aa !important;
+  }
+
+  & .ant-btn {
+    &.ant-btn-primary {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-family: "Roboto", sans-serif !important;
+      font-weight: 300 !important;
+      font-size: 25px !important;
+      color: white !important;
+      width: 275px !important;
+      height: 50px !important;
+    }
+  }
+}
+
 .reviewsSelect {
-  margin-right: ptr(50px);
 
   & .ant-select {
-    width: ptr(325px) !important;
-    height: 100% !important;
-    & * { //отменяем у всех вложенных
-      box-shadow: none !important;
-    }
 
     & .ant-select-selection {
       display: flex;
       align-items: center;
+      width: 300px !important;
+      height: 50px !important;
       font-family: "Roboto", sans-serif !important;
       font-weight: 300 !important;
-      font-size: ptr(25px) !important;
+      font-size: 25px !important;
       color: #0064aa;
       border: 1px solid #0064aa !important;
       border-radius: 0;
-      height: ptr(50px) !important;
+
+
+      & .ant-select-arrow {
+        & * {
+          color: #0064aa !important;
+        }
+      }
     }
 
     &.ant-select-focused {
@@ -28,116 +53,146 @@
   }
 }
 
-.reviewsDropdown {
-  border-radius: 0 !important;
+@mixin reviewMarkInModalTemplate {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+}
 
-  & * {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300 !important;
-    font-size: ptr(25px) !important;
-    color: #0064aa !important;
+.reviewMarkInModal {
+  @include reviewMarkInModalTemplate;
+  color: #4cff00 !important;
 
-    & .ant-select-dropdown-menu-item {
-      padding: ptr(15px);
-    }
+  @media screen and (min-width: 480px) {
+    font-size: 28px !important;
+  }
 
-    & .ant-select-dropdown-menu-item:hover {
-      background: rgba(0, 100, 170, 0.15) !important;
-    }
+  @media screen and (min-width: 330px) and (max-width: 479px) {
+    font-size: 18px !important;
+  }
 
-    & .ant-select-dropdown-menu-item-selected {
-      font-weight: 400 !important;
-    }
+  @media screen and (max-width: 329px) {
+    font-size: 14px !important;
   }
 }
 
-.reviewsModal {
+.reviewMarkTextInModal {
+  @include reviewMarkInModalTemplate;
+  color: #0064aa !important;
+  margin-left: 16px;
 
-  & .ant-btn {
-    &.ant-btn-primary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Roboto", sans-serif !important;
-      font-weight: 300 !important;
-      font-size: ptr(25px) !important;
-      color: white;
-      width: ptr(325px) !important;
-      height: ptr(50px) !important;
-      background: #3592d4;
-      border-radius: 0;
-    }
+  @media screen and (min-width: 480px) {
+    font-size: 24px !important;
+  }
+
+  @media screen and (min-width: 330px) and (max-width: 479px) {
+    font-size: 18px !important;
+  }
+
+  @media screen and (max-width: 329px) {
+    font-size: 14px !important;
   }
 }
 
 .reviewsWrap {
+  width: 100vw !important;
+  align-self: start !important;
+  align-items: start !important;
+  align-content: start !important;
+
   & .ant-modal-body {
-    padding: ptr(24px) 24px;
+    padding: 24px 24px 16px 24px !important;
   }
 
   & .ant-modal-footer {
-    padding-right: 24px !important;
-    & .ant-btn {
-      &.ant-btn-primary {
-        font-family: "Roboto", sans-serif !important;
-        font-weight: 300 !important;
-        font-size: ptr(25px) !important;
-        color: white;
-      }
-    }
+    display: none !important;
+  }
+
+  .newsStyle {
+    display: flex;
+    justify-content: flex-start;
+    height: 80px;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 25px !important;
+    color: red !important;
   }
 
   & .ant-modal-title {
     font-family: "Roboto", sans-serif !important;
     font-weight: 400 !important;
-    font-size: ptr(30px) !important;
-    color: #0064aa;
+    font-size: 30px !important;
+    color: #0064aa !important;
   }
 
   & .ant-input {
-    font-family: "Roboto", sans-serif;
-    font-size: ptr(20px);
-    font-weight: 300;
-    font-style: normal;
-    color: #393939;
+    font-family: "Roboto", sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+    font-style: normal !important;
+    color: #393939 !important;
     border: 1px solid #0064aa;
+    margin-bottom: 0 !important;
 
     &.ant-input::placeholder {
-      font-size: ptr(18px);
-      font-style: italic;
-      color: #758088;
+      font-size: 18px !important;
+      font-style: italic !important;
+      color: #758088 !important;
     }
   }
 }
 
-.reviewsWarning {
-  & .ant-modal-body {
-    padding: 24px 24px !important;
+.reviewsButton {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 1px #0064aa dotted !important;
+  padding: 0 !important;
+  padding-top: 8px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  text-shadow: none !important;
+  box-sizing: unset !important;
+  background: white !important;
+  border-radius: unset !important;
+  --antd-wave-shadow-color: none !important;
+  text-align: unset !important;
+  margin-left: 17px !important;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300 !important;
+  color: #0064aa !important;
 
-    & .ant-modal-confirm-title {
-      font-family: "Roboto", sans-serif;
-      font-size: ptr(30px) !important;
-      font-weight: 400 !important;
-      color: #0064aa !important;
-    }
-
-    & .ant-modal-confirm-content {
-      font-family: "Roboto", sans-serif;
-      font-size: ptr(25px) !important;
-      font-weight: 300 !important;
-      color: #393939;
-    }
-
-    & .ant-modal-confirm-btns {
-      margin-top: ptr(16px) !important;
-      & .ant-btn {
-        &.ant-btn-primary {
-          font-family: "Roboto", sans-serif !important;
-          font-weight: 300 !important;
-          font-size: ptr(25px) !important;
-          color: white;
-        }
-      }
-    }
+  @media screen and (min-width: 641px) {
+    width: 137px !important;
+    font-size: 18px !important;
   }
+
+  @media screen and (max-width: 640px) {
+    width: 122px !important;
+    font-size: 16px !important;
+  }
+}
+
+.reviewsButton:hover > span:nth-child(3) {
+  color: black;
+  transition: 0.2s ease-out;
+}
+
+.reviewsButton:hover > span:last-child {
+  color: black;
+  transition: 0.2s ease-out;
+}
+
+.reviewsButtonButtonInModal {
+  @media screen and (min-width: 641px) {
+    margin: 15px 15px;
+  }
+}
+
+.reviewModal {
+  width: 1024px !important;
 }

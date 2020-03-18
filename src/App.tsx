@@ -36,14 +36,14 @@ class AppHeaderInner extends React.Component<{location: any}, {
                         </Link>
                     </div>
                     <div>
-                        <div className={location.pathname === "/reviews"? styles.appBarMenuButtonActive :
-                            styles.appBarMenuButton}><Link to="/reviews">Отзывы</Link></div>
                         <div className={location.pathname === "/ultrasound"? styles.appBarMenuButtonActive :
                             styles.appBarMenuButton}><Link to="/ultrasound">УЗИ</Link></div>
                         <div className={location.pathname === "/spa"? styles.appBarMenuButtonActive :
                             styles.appBarMenuButton}><Link to="/spa">Массаж</Link></div>
                         <div className={location.pathname === "/news"? styles.appBarMenuButtonActive :
                             styles.appBarMenuButton}><Link to="/news">Новости</Link></div>
+                        <div className={location.pathname === "/reviews"? styles.appBarMenuButtonActive :
+                            styles.appBarMenuButton}><Link to="/reviews">Отзывы</Link></div>
                     </div>
                     <div className={styles.appBarFooter}>
                         <span className={styles.appBarFooterBuild}>alpha-build:001/1a</span>
@@ -69,9 +69,6 @@ const App: React.FC = () => {
                 <div className={styles.appHeader}>
                     <AppHeader/>
                     <Switch>
-                        <Route path="/reviews">
-                            <Reviews/>
-                        </Route>
                         <Route path="/ultrasound">
                             <Ultrasound/>
                         </Route>
@@ -80,6 +77,9 @@ const App: React.FC = () => {
                         </Route>
                         <Route path="/news">
                           <News/>
+                        </Route>
+                        <Route path="/reviews">
+                            <Reviews/>
                         </Route>
                         <Route path="/">
                           <Home/>

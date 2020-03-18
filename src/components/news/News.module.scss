@@ -46,6 +46,18 @@
   width: 100%;
 }
 
+.newsButtonAdd {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 25px !important;
+  color: white !important;
+  width: 300px !important;
+  height: 64px !important;
+}
+
 .newsShowBlock {
   @include flexColumnRelative;
   width: 100%;
@@ -112,4 +124,11 @@
   grid-template-columns: 1fr 120px 216px;
   height: 40px;
   width: 1fr;
+}
+
+.newsModalImgTitleBlock {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 104px 1fr;
+  grid-template-rows: 100px;
 }
