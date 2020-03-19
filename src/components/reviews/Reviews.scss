@@ -143,15 +143,16 @@
 }
 
 .reviewsButton {
-  display: grid !important;
-  align-items: center !important;
-  width: 804px !important;
-  grid-template-columns: 1px 400px 1px 200px 1px 200px 1px !important;
-  grid-template-rows: minmax(65px, 1fr) !important;
-  margin: 0 ptr(200px) !important;
-
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: #393939;
+  height: 100% !important;
+  width: 100% !important;
   border: none !important;
-  padding: 0 !important;
+  padding: 0;
   outline: none !important;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -160,18 +161,19 @@
   background: white !important;
   border-radius: unset !important;
   --antd-wave-shadow-color: none !important;
-
-
+  margin-left: 1px !important;
 }
 
-.reviewsButton:hover > span:nth-child(3) {
-  color: black;
-  transition: 0.2s ease-out;
+.reviewsButtonInner {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.25 !important;
 }
 
-.reviewsButton:hover > span:last-child {
-  color: black;
-  transition: 0.2s ease-out;
+.reviewsButton:hover {
+  font-weight: 400 !important;
+  color: black !important;
+  transition: 0.1s ease-out;
 }
 
 .reviewsButtonButtonInModal {

@@ -8,7 +8,6 @@ import gql from "graphql-tag";
 import { Table } from 'antd';
 import { ApolloError } from "apollo-boost";
 import moment from "moment";
-import 'moment/locale/ru';
 import ReviewsModal from "../reviews/ReviewsModal";
 
 const GET_REVIEWS = gql`
@@ -22,6 +21,7 @@ const GET_REVIEWS = gql`
                 reviewMark
                 reviewDate
                 reviewStatus
+                reviewCabinet
             }
         }
     }
@@ -90,6 +90,7 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                     if (loading) return <span>"Loading...";</span>;
                     if (error) return <span>`Error! ${error.message}`</span>;
                     let nodes;
+                    let endNodes;
 
                     switch(this.props.valueReview) {
                         case "unverifiedReviews": {
@@ -112,44 +113,81 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
 
                     switch(this.props.valueMark) {
                         case "positiveMarks": {
-                            nodes = nodes.filter((revTemp:any) => revTemp.reviewMark >= 4);
+                            endNodes = nodes.filter((revTemp:any) => revTemp.reviewMark >= 4);
                             break;
                         }
                         case "neutralMarks": {
-                            nodes = nodes.filter((revTemp:any) => revTemp.reviewMark === 3);
+                            endNodes = nodes.filter((revTemp:any) => revTemp.reviewMark === 3);
                             break;
                         }
                         case "negativeMarks": {
-                            nodes = nodes.filter((revTemp:any) => revTemp.reviewMark <= 2);
+                            endNodes = nodes.filter((revTemp:any) => revTemp.reviewMark <= 2);
                             break;
                         }
                         default: {
+                            endNodes = nodes;
                             break;
                         }
                     }
+
+                    function changeCabinetName(bool: boolean) {
+                        let str;
+                        if (bool) str = "УЗИ";
+                        else if (!bool) str = "СПА";
+                        else str = "???";
+                        return str;
+                    }
+
+                    function changeStatusName(bool: boolean) {
+                        let str;
+                        if (bool) str = "ОДОБРЕН";
+                        else if (!bool) str = "ОТКЛОНЁН";
+                        else str = "НОВЫЙ";
+                        return str;
+                    }
+
                     return (
                         <div className={styles.pageReviewsAll}>
                             <div className={styles.priceListTableHeader}>
-                                <span className={styles.tableHeaderText}>Наименование обследования</span>
+                                <span className={styles.tableHeaderText}>Инициалы пациента</span>
                                 <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
-                                <span className={styles.tableHeaderText}>Время</span>
+                                <span className={styles.tableHeaderText}>Кабинет</span>
                                 <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
-                                <span className={styles.tableHeaderText}>Стоимость</span>
+                                <span className={styles.tableHeaderText}>Оценка</span>
+                                <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
+                                <span className={styles.tableHeaderText}>Дата</span>
+                                <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
+                                <span className={styles.tableHeaderText}>Статус</span>
                             </div>
-                            {nodes.map((reviewsQuery: any) => (
+                            {endNodes.map((reviewsQuery: any) => (
                                 <div>
-                                    <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
-                                        <div className={styles.priceListTable}>
-                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
-                                            <span className={styles.tableTextHeader}>{reviewsQuery.firstName}</span>
-                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                            <span className={styles.tableText}>{reviewsQuery.reviewMark}</span>
-                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                            <span className={styles.tableText}>{reviewsQuery.reviewDate}</span>
-                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
-                                        </div>
-                                        <span className={styles.tableSeparatorHorizontal}/>
-                                    </Button>
+                                    <div className={styles.priceListTable}>
+                                        <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
+                                        <Button type="primary" key={reviewsQuery.id} style={{justifyContent: "flex-start", paddingLeft: "15px"}} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                            {reviewsQuery.firstName}&nbsp;{reviewsQuery.secondName}
+                                        </Button>
+                                        <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
+                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                            {changeCabinetName(reviewsQuery.reviewCabinet)}
+                                        </Button>
+                                        <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
+                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                            {reviewsQuery.reviewMark}
+                                        </Button>
+                                        <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
+                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                            <div className="reviewsButtonInner">
+                                                <span>{moment(reviewsQuery.reviewDate).format("DD.MM.YYYY")}</span>
+                                                <span>{moment(reviewsQuery.reviewDate).format("HH:mm:ss")}</span>
+                                            </div>
+                                        </Button>
+                                        <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
+                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                            {changeStatusName(reviewsQuery.reviewStatus)}
+                                        </Button>
+                                        <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
+                                    </div>
+                                    <span className={styles.tableSeparatorHorizontal}/>
                                     <ReviewsModal reviews={reviewsQuery} isVisible={reviewsQuery.id === this.state.activeModal} onClose={this.handleCancelFull}/>
                                 </div>
                             ))}

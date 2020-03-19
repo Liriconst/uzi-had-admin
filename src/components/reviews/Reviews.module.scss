@@ -2,35 +2,19 @@
 
 .pageReviews {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: 129px 1fr;
   background: white;
+  overflow-y: auto;
 }
 
 .pageReviewsAll {
   display: grid;
+  align-self: start;
   justify-content: center;
-  grid-template-columns: 1fr;
-
-  @media screen and (min-width: 1151px) {
-    grid-gap: ptr(75px);
-    margin: 0 ptr(100px) ptr(75px) ptr(100px);
-  }
-
-  @media screen and (min-width: 821px) and (max-width: 1150px) {
-    grid-gap: ptr(100px);
-    margin: 0 ptr(150px) ptr(100px) ptr(150px);
-  }
-
-  @media screen and (min-width: 641px) and (max-width: 820px) {
-    grid-gap: ptr(125px);
-    margin: 0 ptr(100px) ptr(125px) ptr(100px);
-  }
-
-  @media screen and (max-width: 640px) {
-    grid-gap: ptr(175px);
-    margin: 0 ptr(250px) ptr(175px) ptr(250px);
-  }
+  justify-items: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr;
 }
 
 .reviewsFilterButtons {
@@ -213,22 +197,14 @@
   }
 }
 
-
-@mixin priceListTableHeaderTemplate {
+.priceListTableHeader {
   display: grid;
-  background: #0064aa;
   justify-items: center;
   align-items: center;
-}
-
-.priceListTableHeader {
-  @include priceListTableHeaderTemplate;
-
-  @media screen and (min-width: 920px) {
-    grid-template-columns: 1fr 1px 200px 1px 200px;
-    grid-template-rows: 65px;
-    margin: 30px ptr(200px) 0 ptr(200px);
-  }
+  grid-template-columns: 502px 1px 150px 1px 150px 1px 175px 1px 175px;
+  grid-template-rows: 65px !important;
+  background: #0064aa;
+  margin: 30px 0 0 0;
 }
 
 @mixin priceListTableTextTemplate {
@@ -257,14 +233,17 @@
   background: white;
 }
 
-.priceListTable{
+.priceListTable {
   display: grid;
   align-items: center;
+  justify-content: center;
+  grid-template-columns: 1px 500px 1px 150px 1px 150px 1px 175px 1px 175px 1px;
+  grid-template-rows: 65px;
 
-  @media screen and (min-width: 920px) {
-    grid-template-columns: 1px 1fr 1px 200px 1px 200px 1px;
-    grid-template-rows: minmax(65px, 1fr);
-    margin: 0 ptr(200px);
+  &:hover > button {
+    font-weight: 400 !important;
+    color: black !important;
+    transition: 0.1s ease-out !important;
   }
 }
 
@@ -295,11 +274,10 @@
 }
 
 .tableSeparatorHorizontal {
-  display: grid;
+  display: flex;
   justify-items: center;
   align-items: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1px;
-  margin: 0 ptr(200px);
+  height: 1px;
+  width: 1156px;
   background: #0064aa;
 }

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15f09b30-43a7-4c7a-a872-a3ca088f9e2f" name="Default Changelist" comment="add function update and delete news">
+    <list default="true" id="4102b668-5135-4892-86fa-e8c63e721ecb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +40,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Rainbow Brackets" />
-    <property name="ts.external.directory.path" value="C:\Users\ПопковЯИ\Desktop\uzi-had-admin\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\uzi-had-admin\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
