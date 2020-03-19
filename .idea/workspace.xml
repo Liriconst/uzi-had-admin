@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15f09b30-43a7-4c7a-a872-a3ca088f9e2f" name="Default Changelist" comment="add function update and delete news">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/KK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/News.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/News.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/NewsAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAdd.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/NewsAllTest.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/NewsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +41,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Rainbow Brackets" />
-    <property name="ts.external.directory.path" value="D:\uzi-had-admin\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\ПопковЯИ\Desktop\uzi-had-admin\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -115,6 +104,7 @@
       <workItem from="1584542336643" duration="9498000" />
       <workItem from="1584556486595" duration="36000" />
       <workItem from="1584556706935" duration="3800000" />
+      <workItem from="1584608940717" duration="7495000" />
     </task>
     <task id="LOCAL-00001" summary="Work with news in admin-panel">
       <created>1579079087681</created>
@@ -164,6 +154,22 @@
     </state>
     <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584311088599" />
     <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900@0.0.1600.900" timestamp="1579121520040" />
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1584609007542">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1584609007542" />
+    <state width="1899" height="295" key="GridCell.Tab.0.center" timestamp="1584609007542">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1584609007542" />
+    <state width="1899" height="295" key="GridCell.Tab.0.left" timestamp="1584609007542">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1584609007542" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right" timestamp="1584609007542">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1584609007542" />
     <state x="375" y="83" key="SettingsEditor" timestamp="1584348327634">
       <screen x="0" y="0" width="1600" height="900" />
     </state>

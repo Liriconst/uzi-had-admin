@@ -13,7 +13,7 @@ import ReviewsModal from "../reviews/ReviewsModal";
 
 const GET_REVIEWS = gql`
     query {
-        allReviews(orderBy: REVIEW_DATE_DESC, condition: {reviewStatus: true}) {
+        allReviews(orderBy: REVIEW_DATE_DESC) {
             nodes {
                 id
                 firstName
@@ -21,24 +21,24 @@ const GET_REVIEWS = gql`
                 reviewText
                 reviewMark
                 reviewDate
+                reviewStatus
             }
         }
     }
 `;
 
 interface ReviewsAddProps {
-    value?: number
+    valueReview?: string,
+    valueMark?: string
 }
 
 class ReviewsAll extends React.Component<ReviewsAddProps, {
-    mode?: string,
     visible?: boolean,
     activeModal?: number
 }> {
     public constructor(props: ReviewsAddProps) {
         super(props);
         this.state = {
-            mode: 'all',
             visible: false,
             activeModal: 0
         }
@@ -65,6 +65,7 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
     };
 
     public render(): React.ReactNode {
+        const Pizdec = 0;
         function sliceTextFull(str: string) {
             let newStr = str.trim();
             if( newStr.length <= 350) return newStr;
@@ -90,17 +91,17 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                     if (error) return <span>`Error! ${error.message}`</span>;
                     let nodes;
 
-                    switch(this.props.value) {
-                        case 1: {
-                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewMark >= 4);
+                    switch(this.props.valueReview) {
+                        case "unverifiedReviews": {
+                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewStatus === null);
                             break;
                         }
-                        case 2: {
-                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewMark == 3);
+                        case "approvedReviews": {
+                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewStatus === true);
                             break;
                         }
-                        case 3: {
-                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewMark <= 2);
+                        case "rejectedReviews": {
+                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewStatus === false);
                             break;
                         }
                         default: {
@@ -108,27 +109,47 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                             break;
                         }
                     }
+
+                    switch(this.props.valueMark) {
+                        case "positiveMarks": {
+                            nodes = nodes.filter((revTemp:any) => revTemp.reviewMark >= 4);
+                            break;
+                        }
+                        case "neutralMarks": {
+                            nodes = nodes.filter((revTemp:any) => revTemp.reviewMark === 3);
+                            break;
+                        }
+                        case "negativeMarks": {
+                            nodes = nodes.filter((revTemp:any) => revTemp.reviewMark <= 2);
+                            break;
+                        }
+                        default: {
+                            break;
+                        }
+                    }
                     return (
                         <div className={styles.pageReviewsAll}>
+                            <div className={styles.priceListTableHeader}>
+                                <span className={styles.tableHeaderText}>Наименование обследования</span>
+                                <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
+                                <span className={styles.tableHeaderText}>Время</span>
+                                <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
+                                <span className={styles.tableHeaderText}>Стоимость</span>
+                            </div>
                             {nodes.map((reviewsQuery: any) => (
                                 <div>
-                                    <div className={styles.reviewHeader}>
-                                        <span className={styles.reviewAvatar}><img src="/static/svg/profileIcon.svg" alt=""/></span>
-                                        <div className={styles.reviewHeaderText}>
-                                            <span className={(reviewsQuery.reviewMark >= 4) ? styles.reviewsFIOPos :
-                                                ((reviewsQuery.reviewMark == 3) ? styles.reviewsFIOMid : styles.reviewsFIONeg)}>
-                                                {reviewsQuery.firstName}&nbsp;{reviewsQuery.secondName}
-                                            </span>
-                                            <span className={styles.reviewHeaderDate}>{moment(reviewsQuery.reviewDate).format("DD.MM.YYYY")}</span>
+                                    <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                        <div className={styles.priceListTable}>
+                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
+                                            <span className={styles.tableTextHeader}>{reviewsQuery.firstName}</span>
+                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
+                                            <span className={styles.tableText}>{reviewsQuery.reviewMark}</span>
+                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
+                                            <span className={styles.tableText}>{reviewsQuery.reviewDate}</span>
+                                            <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
                                         </div>
-                                            <Rate className={(reviewsQuery.reviewMark >= 4) ? styles.reviewMarkPos :
-                                                ((reviewsQuery.reviewMark == 3) ? styles.reviewMarkMid :
-                                                    styles.reviewMarkNeg)} disabled defaultValue={reviewsQuery.reviewMark}/>
-                                    </div>
-                                        <div className={styles.reviewsText}>{sliceTextFull(reviewsQuery.reviewText)}</div>
-                                        {((reviewsQuery.reviewText).length > 500) ?
-                                            <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>Читать целиком</Button> : null}
-
+                                        <span className={styles.tableSeparatorHorizontal}/>
+                                    </Button>
                                     <ReviewsModal reviews={reviewsQuery} isVisible={reviewsQuery.id === this.state.activeModal} onClose={this.handleCancelFull}/>
                                 </div>
                             ))}

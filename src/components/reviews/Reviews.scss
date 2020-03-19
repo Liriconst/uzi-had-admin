@@ -143,15 +143,15 @@
 }
 
 .reviewsButton {
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
-  border-top: 0 !important;
-  border-left: 0 !important;
-  border-right: 0 !important;
-  border-bottom: 1px #0064aa dotted !important;
+  display: grid !important;
+  align-items: center !important;
+  width: 804px !important;
+  grid-template-columns: 1px 400px 1px 200px 1px 200px 1px !important;
+  grid-template-rows: minmax(65px, 1fr) !important;
+  margin: 0 ptr(200px) !important;
+
+  border: none !important;
   padding: 0 !important;
-  padding-top: 8px !important;
   outline: none !important;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -160,21 +160,8 @@
   background: white !important;
   border-radius: unset !important;
   --antd-wave-shadow-color: none !important;
-  text-align: unset !important;
-  margin-left: 17px !important;
-  font-family: "Roboto", sans-serif !important;
-  font-weight: 300 !important;
-  color: #0064aa !important;
 
-  @media screen and (min-width: 641px) {
-    width: 137px !important;
-    font-size: 18px !important;
-  }
 
-  @media screen and (max-width: 640px) {
-    width: 122px !important;
-    font-size: 16px !important;
-  }
 }
 
 .reviewsButton:hover > span:nth-child(3) {
