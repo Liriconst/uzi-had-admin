@@ -66,23 +66,6 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
     };
 
     public render(): React.ReactNode {
-        function sliceTextFull(str: string) {
-            let newStr = str.trim();
-            if( newStr.length <= 350) return newStr;
-            newStr = newStr.slice( 0, 350);
-            let lastSpace = newStr.lastIndexOf(" ");
-            if( lastSpace > 0) newStr = newStr.substr(0, lastSpace);
-            return newStr + "...";
-        }
-
-        function sliceTextMobile(str: string) {
-            let newStr = str.trim();
-            if( newStr.length <= 100) return newStr;
-            newStr = newStr.slice( 0, 100);
-            let lastSpace = newStr.lastIndexOf(" ");
-            if( lastSpace > 0) newStr = newStr.substr(0, lastSpace);
-            return newStr + "...";
-        }
 
         return (
             <Query query={GET_REVIEWS}>
@@ -179,31 +162,41 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                                 <div key={reviewsQuery.id}>
                                     <div className={styles.reviewsTable}>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
-                                        <Button type="primary" key={reviewsQuery.id} style={{justifyContent: "flex-start", paddingLeft: "15px"}} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                        <Button type="primary" key={reviewsQuery.id} style={{justifyContent: "flex-start", paddingLeft: "15px", left: "-1px"}}
+                                                          className={(reviewsQuery.reviewStatus == null) ? "reviewsButtonNew" : "reviewsButton"}
+                                        onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             {reviewsQuery.firstName}&nbsp;{reviewsQuery.secondName}
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                        <Button type="primary" key={reviewsQuery.id} className={(reviewsQuery.reviewStatus == null) ? "reviewsButtonNew" :
+                                                                                                                                      "reviewsButton"}
+                                        onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             {changeCabinetName(reviewsQuery.reviewCabinet)}
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                        <Button type="primary" key={reviewsQuery.id} style={{fontWeight: "normal"}} className={(reviewsQuery.reviewMark >= 4) ? "reviewsButtonPos" :
-                                                                                                                              ((reviewsQuery.reviewMark == 3) ? "reviewsButtonMid" :
-                                                                                                                                                                "reviewsButtonNeg")}
+                                        <Button type="primary" key={reviewsQuery.id} className={(reviewsQuery.reviewStatus == null) ? "reviewsButtonNew" :
+                                                                                                                                       "reviewsButton"}
+                                                                                     style={(reviewsQuery.reviewMark >= 4) ? {color: "#3bbf00"} :
+                                                                                           ((reviewsQuery.reviewMark == 3) ? {color: "#003f7f"} :
+                                                                                                                             {color: "#d50000"})}
                                         onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             {reviewsQuery.reviewMark}
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                        <Button type="primary" key={reviewsQuery.id} className={(reviewsQuery.reviewStatus == null) ? "reviewsButtonNew" :
+                                                                                                                                      "reviewsButton"}
+                                        onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             <div className="reviewsButtonInner">
                                                 <span>{moment(reviewsQuery.reviewDate).format("DD.MM.YYYY")}</span>
                                                 <span>{moment(reviewsQuery.reviewDate).format("HH:mm:ss")}</span>
                                             </div>
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                        <Button type="primary" key={reviewsQuery.id} className={(reviewsQuery.reviewStatus === true)  ? "reviewsButtonPos" :
-                                                                                               ((reviewsQuery.reviewStatus === false) ? "reviewsButtonNeg" :
-                                                                                                                                        "reviewsButtonMid")}
+                                        <Button type="primary" key={reviewsQuery.id} className={(reviewsQuery.reviewStatus == null) ? "reviewsButtonNew" :
+                                                                                                                                      "reviewsButton"}
+                                                                                     style={(reviewsQuery.reviewStatus == true) ? {color: "#3bbf00"} :
+                                                                                           ((reviewsQuery.reviewStatus == null) ? {color: "#003f7f"} :
+                                                                                                                                  {color: "#d50000"})}
                                         onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             {changeStatusName(reviewsQuery.reviewStatus)}
                                         </Button>

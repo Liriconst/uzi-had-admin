@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4102b668-5135-4892-86fa-e8c63e721ecb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/NewsAll.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/reviews/ReviewsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsModal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +104,8 @@
       <workItem from="1584556486595" duration="36000" />
       <workItem from="1584556706935" duration="3800000" />
       <workItem from="1584608940717" duration="7495000" />
-      <workItem from="1584708633384" duration="17951000" />
+      <workItem from="1584708633384" duration="18289000" />
+      <workItem from="1584779471865" duration="3851000" />
     </task>
     <task id="LOCAL-00001" summary="Work with news in admin-panel">
       <created>1579079087681</created>
@@ -138,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584311083052</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Pre realize page Reviews&#10;Rework on page News">
+      <created>1584754020046</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584754020046</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,13 +154,14 @@
     <MESSAGE value="Work with news in admin-panel 2" />
     <MESSAGE value="Work with news in admin-panel 3" />
     <MESSAGE value="add function update and delete news" />
-    <option name="LAST_COMMIT_MESSAGE" value="add function update and delete news" />
+    <MESSAGE value="Pre realize page Reviews&#10;Rework on page News" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pre realize page Reviews&#10;Rework on page News" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1584659595102">
+    <state x="181" y="45" key="CommitChangelistDialog2" timestamp="1584754018996">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584659595102" />
+    <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584754018996" />
     <state x="181" y="45" key="CommitChangelistDialog2/0.0.1600.900@0.0.1600.900" timestamp="1579121520040" />
     <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1584609007542">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -178,10 +183,10 @@
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="375" y="83" key="SettingsEditor/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584737595383" />
-    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1584659626062">
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2" timestamp="1584754026300">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584659626062" />
+    <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900/-1280.0.1280.1024@0.0.1600.900" timestamp="1584754026300" />
     <state x="148" y="183" key="Vcs.Push.Dialog.v2/0.0.1600.900@0.0.1600.900" timestamp="1579121530844" />
     <state x="456" y="205" key="run.anything.popup" timestamp="1584462144764">
       <screen x="0" y="0" width="1600" height="900" />

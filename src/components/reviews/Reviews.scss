@@ -149,18 +149,11 @@
   @include reviewsButtonTemplate;
 }
 
-.reviewsButtonPos {
-  @include reviewsButtonTemplate;
-  color: #3bbf00 !important;
- }
-.reviewsButtonMid {
+.reviewsButtonNew {
   @include reviewsButtonTemplate;
   font-weight: 400;
-  color: #0064aa !important;
-}
-.reviewsButtonNeg {
-  @include reviewsButtonTemplate;
-  color: #d50000 !important;
+  background: #B2D0E5 !important;
+  color: #003f7f;
 }
 
 .reviewsButtonInner {
