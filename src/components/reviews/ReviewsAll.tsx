@@ -28,6 +28,7 @@ const GET_REVIEWS = gql`
 `;
 
 interface ReviewsAddProps {
+    valueCabinet?: string,
     valueReview?: string,
     valueMark?: string
 }
@@ -65,7 +66,6 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
     };
 
     public render(): React.ReactNode {
-        const Pizdec = 0;
         function sliceTextFull(str: string) {
             let newStr = str.trim();
             if( newStr.length <= 350) return newStr;
@@ -89,43 +89,59 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                 {({loading, error, data}: {loading: boolean, error?: ApolloError, data: any}) => {
                     if (loading) return <span>"Loading...";</span>;
                     if (error) return <span>`Error! ${error.message}`</span>;
-                    let nodes;
-                    let endNodes;
+                    let filterCabinets;
+                    let filterReviews;
+                    let filterMarks;
 
-                    switch(this.props.valueReview) {
-                        case "unverifiedReviews": {
-                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewStatus === null);
+                    switch(this.props.valueCabinet) {
+                        case "USCabinet": {
+                            filterCabinets = data.allReviews.nodes.filter((cabTemp:any) => cabTemp.reviewCabinet === true);
                             break;
                         }
-                        case "approvedReviews": {
-                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewStatus === true);
-                            break;
-                        }
-                        case "rejectedReviews": {
-                            nodes = data.allReviews.nodes.filter((revTemp:any) => revTemp.reviewStatus === false);
+                        case "SPACabinet": {
+                            filterCabinets = data.allReviews.nodes.filter((cabTemp:any) => cabTemp.reviewCabinet === false);
                             break;
                         }
                         default: {
-                            nodes = data.allReviews.nodes;
+                            filterCabinets = data.allReviews.nodes;
+                            break;
+                        }
+                    }
+
+                    switch(this.props.valueReview) {
+                        case "unverifiedReviews": {
+                            filterReviews = filterCabinets.filter((revTemp:any) => revTemp.reviewStatus === null);
+                            break;
+                        }
+                        case "approvedReviews": {
+                            filterReviews = filterCabinets.filter((revTemp:any) => revTemp.reviewStatus === true);
+                            break;
+                        }
+                        case "rejectedReviews": {
+                            filterReviews = filterCabinets.filter((revTemp:any) => revTemp.reviewStatus === false);
+                            break;
+                        }
+                        default: {
+                            filterReviews = filterCabinets;
                             break;
                         }
                     }
 
                     switch(this.props.valueMark) {
                         case "positiveMarks": {
-                            endNodes = nodes.filter((revTemp:any) => revTemp.reviewMark >= 4);
+                            filterMarks = filterReviews.filter((markTemp:any) => markTemp.reviewMark >= 4);
                             break;
                         }
                         case "neutralMarks": {
-                            endNodes = nodes.filter((revTemp:any) => revTemp.reviewMark === 3);
+                            filterMarks = filterReviews.filter((markTemp:any) => markTemp.reviewMark === 3);
                             break;
                         }
                         case "negativeMarks": {
-                            endNodes = nodes.filter((revTemp:any) => revTemp.reviewMark <= 2);
+                            filterMarks = filterReviews.filter((markTemp:any) => markTemp.reviewMark <= 2);
                             break;
                         }
                         default: {
-                            endNodes = nodes;
+                            filterMarks = filterReviews;
                             break;
                         }
                     }
@@ -141,27 +157,27 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                     function changeStatusName(bool: boolean) {
                         let str;
                         if (bool) str = "ОДОБРЕН";
-                        else if (!bool) str = "ОТКЛОНЁН";
-                        else str = "НОВЫЙ";
+                        else if (bool === false) str = "ОТКЛОНЁН";
+                        else if (bool === null) str = "НОВЫЙ";
                         return str;
                     }
 
                     return (
                         <div className={styles.pageReviewsAll}>
-                            <div className={styles.priceListTableHeader}>
-                                <span className={styles.tableHeaderText}>Инициалы пациента</span>
+                            <div className={styles.reviewsTableHeader}>
+                                <span className={styles.reviewsHeaderText}>Инициалы пациента</span>
                                 <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
-                                <span className={styles.tableHeaderText}>Кабинет</span>
+                                <span className={styles.reviewsHeaderText}>Кабинет</span>
                                 <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
-                                <span className={styles.tableHeaderText}>Оценка</span>
+                                <span className={styles.reviewsHeaderText}>Оценка</span>
                                 <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
-                                <span className={styles.tableHeaderText}>Дата</span>
+                                <span className={styles.reviewsHeaderText}>Дата</span>
                                 <span className={styles.tableHeaderSeparator} style={{height: "55px", width: "1px", padding: "5px 0"}}/>
-                                <span className={styles.tableHeaderText}>Статус</span>
+                                <span className={styles.reviewsHeaderText}>Статус</span>
                             </div>
-                            {endNodes.map((reviewsQuery: any) => (
-                                <div>
-                                    <div className={styles.priceListTable}>
+                            {filterMarks.map((reviewsQuery: any) => (
+                                <div key={reviewsQuery.id}>
+                                    <div className={styles.reviewsTable}>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>
                                         <Button type="primary" key={reviewsQuery.id} style={{justifyContent: "flex-start", paddingLeft: "15px"}} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             {reviewsQuery.firstName}&nbsp;{reviewsQuery.secondName}
@@ -171,7 +187,10 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                                             {changeCabinetName(reviewsQuery.reviewCabinet)}
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                        <Button type="primary" key={reviewsQuery.id} style={{fontWeight: "normal"}} className={(reviewsQuery.reviewMark >= 4) ? "reviewsButtonPos" :
+                                                                                                                              ((reviewsQuery.reviewMark == 3) ? "reviewsButtonMid" :
+                                                                                                                                                                "reviewsButtonNeg")}
+                                        onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             {reviewsQuery.reviewMark}
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
@@ -182,7 +201,10 @@ class ReviewsAll extends React.Component<ReviewsAddProps, {
                                             </div>
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px", marginLeft: "1px"}}/>
-                                        <Button type="primary" key={reviewsQuery.id} className={"reviewsButton"} onClick={() => this.showModalFull(reviewsQuery.id)}>
+                                        <Button type="primary" key={reviewsQuery.id} className={(reviewsQuery.reviewStatus === true)  ? "reviewsButtonPos" :
+                                                                                               ((reviewsQuery.reviewStatus === false) ? "reviewsButtonNeg" :
+                                                                                                                                        "reviewsButtonMid")}
+                                        onClick={() => this.showModalFull(reviewsQuery.id)}>
                                             {changeStatusName(reviewsQuery.reviewStatus)}
                                         </Button>
                                         <span className={styles.tableSeparator} style={{height: "100%", width: "1px"}}/>

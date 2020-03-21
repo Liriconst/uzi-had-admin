@@ -106,6 +106,7 @@ class NewsAll extends React.Component<{}, {
                                                 onConfirm={this.handleSubmit(deleteNews, newsQuery.id)}
                                                 okText="Да"
                                                 cancelText="Нет"
+                                                overlayClassName="popDeleteNews"
                                             >
                                             <Button type="primary" className={"newsDeleteButton"}>
                                                 <img src="/static/svg/closed-trash-bin.svg" alt=""/>

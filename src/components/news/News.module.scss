@@ -21,7 +21,7 @@
 
 .newsAll {
   @include flexColumnRelative;
-  padding-left: 30px;
+  align-items: center;
   width: 100% !important;
   overflow-y: auto;
 }

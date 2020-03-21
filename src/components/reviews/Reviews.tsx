@@ -12,9 +12,9 @@ class Reviews extends React.Component<{}, {
     mode?: string,
     visible?: boolean,
     loading?: boolean,
+    valueCabinet?: string,
     valueReview?: string,
     valueMark?: string
-
 }> {
     public constructor(props: {}) {
         super(props);
@@ -22,9 +22,16 @@ class Reviews extends React.Component<{}, {
             mode: 'all',
             visible: false,
             loading: false,
+            valueCabinet: "",
             valueReview: "",
             valueMark: ""
         };
+    }
+
+    @autobind
+    private handleChangeCabinet(value: any) {
+        console.log(`selected ${value}`);
+        this.setState({valueCabinet: value});
     }
 
     @autobind
@@ -44,6 +51,14 @@ class Reviews extends React.Component<{}, {
             <div className={styles.pageReviews}>
                 <div className={styles.reviewsFilterButtons}>
                     <div className="reviewsSelect">
+                        <Select defaultValue={"allCabinets"} onChange={this.handleChangeCabinet} className="testDrop" dropdownClassName="testDrop">
+                            <Option className={styles.reviewButtonSelectSub} value={"allCabinets"}>Все кабинеты</Option>
+                            <Option className={styles.reviewButtonSelectSub} value={"USCabinet"}>УЗИ</Option>
+                            <Option className={styles.reviewButtonSelectSub} value={"SPACabinet"}>Массаж</Option>
+                        </Select>
+                    </div>
+                    <span className={styles.reviewQuote}>&gt;</span>
+                    <div className="reviewsSelect">
                         <Select defaultValue={"allReviews"} onChange={this.handleChangeReview} className="testDrop" dropdownClassName="testDrop">
                             <Option className={styles.reviewButtonSelectSub} value={"allReviews"}>Все отзывы</Option>
                             <Option className={styles.reviewButtonSelectSub} value={"unverifiedReviews"}>Непроверенные</Option>
@@ -61,7 +76,7 @@ class Reviews extends React.Component<{}, {
                         </Select>
                     </div>
                 </div>
-                <ReviewsAll valueReview={this.state.valueReview} valueMark={this.state.valueMark}/>
+                <ReviewsAll valueCabinet={this.state.valueCabinet} valueReview={this.state.valueReview} valueMark={this.state.valueMark}/>
             </div>
         );
     }
