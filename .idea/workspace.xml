@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4102b668-5135-4892-86fa-e8c63e721ecb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/backCalls/Reviews.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/backCalls/Reviews.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/backCalls/Spa.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/backCalls/SpaAll.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/news/News.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/News.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/ReviewsAll.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/reviews/Reviews.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/spa/Spa.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +40,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/reviews" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/spa" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="liveEdit" />
-    <property name="ts.external.directory.path" value="D:\uzi-had-admin\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\ПопковЯИ\Desktop\uzi-had-admin\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -106,6 +110,7 @@
       <workItem from="1584608940717" duration="7495000" />
       <workItem from="1584708633384" duration="18289000" />
       <workItem from="1584779471865" duration="3851000" />
+      <workItem from="1585121520951" duration="4030000" />
     </task>
     <task id="LOCAL-00001" summary="Work with news in admin-panel">
       <created>1579079087681</created>

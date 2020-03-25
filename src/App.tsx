@@ -4,7 +4,7 @@ import styles from './App.module.scss';
 import Home from "./components/home/Home";
 import Reviews from "./components/reviews/Reviews";
 import Ultrasound from "./components/ultrasound/Ultrasound";
-import Spa from "./components/spa/Spa";
+import Spa from "./components/backCalls/Spa";
 import News from "./components/news/News";
 import "./App.scss";
 import { ApolloProvider } from "react-apollo";
@@ -38,7 +38,7 @@ class AppHeaderInner extends React.Component<{location: any}, {
                     <div>
                         <div className={location.pathname === "/ultrasound"? styles.appBarMenuButtonActive :
                             styles.appBarMenuButton}><Link to="/ultrasound">УЗИ</Link></div>
-                        <div className={location.pathname === "/spa"? styles.appBarMenuButtonActive :
+                        <div className={location.pathname === "/backCalls"? styles.appBarMenuButtonActive :
                             styles.appBarMenuButton}><Link to="/spa">Массаж</Link></div>
                         <div className={location.pathname === "/news"? styles.appBarMenuButtonActive :
                             styles.appBarMenuButton}><Link to="/news">Новости</Link></div>
